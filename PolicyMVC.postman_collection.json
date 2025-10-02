@@ -1,0 +1,310 @@
+{
+  "info": {
+    "_postman_id": "policy-mvc-api-2025",
+    "name": "Policy MVC API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload CSV (form-data)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "sample.csv"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/policies/upload",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "policies", "upload"]
+        }
+      }
+    },
+    {
+      "name": "Search Policy by Username",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/policies/search?username=John",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "policies", "search"],
+          "query": [
+            { "key": "username", "value": "John" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Aggregate Policies by User",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/policies/aggregate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "policies", "aggregate"]
+        }
+      }
+    },
+    {
+      "name": "Schedule Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"message\": \"Hello!\",\n  \"day\": \"2025-10-03\",\n  \"time\": \"10:00:00\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/system/schedule-message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "system", "schedule-message"]
+        }
+      }
+    },
+    {
+      "name": "Agent CRUD",
+      "item": [
+        {
+          "name": "Get All Agents",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/agents",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "agents"]
+            }
+          }
+        },
+        {
+          "name": "Create Agent",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agentName\": \"John Doe\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/agents",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "agents"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User CRUD",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"dob\": \"1990-05-15\",\n  \"address\": \"123 Main St\",\n  \"phone\": \"555-1234\",\n  \"state\": \"NY\",\n  \"zip\": \"10001\",\n  \"email\": \"johndoe@email.com\",\n  \"gender\": \"Male\",\n  \"userType\": \"Individual\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Account CRUD",
+      "item": [
+        {
+          "name": "Get All Accounts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/accounts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "accounts"]
+            }
+          }
+        },
+        {
+          "name": "Create Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountName\": \"JDoeAccount\",\n  \"userId\": \"<user_id_here>\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/accounts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "accounts"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "LOB CRUD",
+      "item": [
+        {
+          "name": "Get All LOBs",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/lobs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "lobs"]
+            }
+          }
+        },
+        {
+          "name": "Create LOB",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryName\": \"Health\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/lobs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "lobs"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Carrier CRUD",
+      "item": [
+        {
+          "name": "Get All Carriers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/carriers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "carriers"]
+            }
+          }
+        },
+        {
+          "name": "Create Carrier",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyName\": \"Acme Insurance\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/carriers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "carriers"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Policy CRUD",
+      "item": [
+        {
+          "name": "Get All Policies",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/policies",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "policies"]
+            }
+          }
+        },
+        {
+          "name": "Create Policy",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"policyNumber\": \"POL12345\",\n  \"policyStartDate\": \"2025-01-01\",\n  \"policyEndDate\": \"2026-01-01\",\n  \"categoryId\": \"<lob_id_here>\",\n  \"companyId\": \"<carrier_id_here>\",\n  \"userId\": \"<user_id_here>\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/policies",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "policies"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
