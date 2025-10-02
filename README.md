@@ -125,5 +125,4 @@ app.js         # Main app
 package.json   # Dependencies
 ```
 
-## License
-ISC
+
